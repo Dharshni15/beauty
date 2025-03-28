@@ -1,0 +1,264 @@
+body {
+    background-color: #ffe6f2;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #fe4c73 !important;
+}
+
+.navbar-nav .nav-link {
+    color: rgb(23, 20, 21) !important;
+    font-weight: bold;
+    font-size: 24px;
+    font-style: italic;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgb(235, 221, 229) !important;
+}
+
+
+/* Show dropdown on hover */
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+/* Style the dropdown items with images */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-item img {
+    width: 40px; /* Adjust image size */
+    height: 40px;
+    border-radius: 5px;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fb5378;
+    padding: 15px;
+}
+
+
+.logo {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+}
+
+.glow {
+    font-size: 50px;
+    color: #fff;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #5d06df, 0 0 40px #3600e6, 0 0 50px #0927d1, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+.mcontainer {
+    background-color: rgb(255, 162, 181);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; 
+    padding: 20px;
+}
+
+.mimage {
+    width: 50%;
+    height: 500px;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.mtext {
+    width: 45%;
+    text-align: center;
+}
+.footer {
+    background-color: #1c0e1a;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Footer Logo & About */
+.footer-about {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-logo {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Quick Links */
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.footer-social {
+    flex: 1;
+}
+
+.footer-social h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-social a {
+    display: inline-block;
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: #1d0f1b;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 16px;
+}
+/* card flip */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 960px;
+}
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.flip-card-front {
+    background: #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flip-card-back {
+    background: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Chatbot Button Styling */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#chatbot-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: #ff4d79;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chatbot-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+#chatbot-btn:hover {
+    transform: scale(1.1);
+    background-color: #e6005c;
+}

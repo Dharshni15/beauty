@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty & Fitness Quiz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fce4ec;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 900px;
+        }
+
+        .card {
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #e91e63;
+        }
+
+        .btn-primary {
+            background-color: #e91e63;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #c2185b;
+        }
+
+        .suggestion {
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .pink-bg {
+            background: linear-gradient(to right, #8e1b2e, #ca7d9d);
+            color: rgb(245, 237, 237);
+        }
+
+        .fitness-bg {
+            background: linear-gradient(to right, #090505, #bd72e5);
+            color: rgb(231, 104, 104);
+        }
+    </style>
+</head>
+<body>
+    <div class="header d-flex align-items-center justify-content-center">
+        <img src="image/icon.jpeg" alt="Logo" class="logo">
+        <header class="glow">BLOOM AND BLISS</header>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                            <li>
+                                <a class="dropdown-item" href="face.html">
+                                    <img src="images/shop (7).png" alt="Face"> Face
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="eye.html">
+                                    <img src="image/home6.jpeg" alt="Eye"> Eye
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="lips.html">
+                                    <img src="images/shop (5).png" alt="Lips"> Lips
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="bridal.html">
+                                    <img src="images/services (4).jpg" alt="Bridal"> Bridal Makeup
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="makuplooks.html">
+                                    <img src="images/services (3).jpg" alt="Makeup Looks"> Makeup Looks
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="skincare.html">Skin Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="haircare.html">Hair Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nailcare.html">Nail Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="selfgrooming.html">Self Grooming Tips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="yourstyle.html">Know Your Style</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <div class="container mt-4">
+        <div class="card mx-auto mb-4 pink-bg">
+            <div class="card-body">
+                <h4 class="card-title text-center">Find Your Skin Type</h4>
+                <form id="skinQuizForm">
+                    <label class="form-label">1. How does your skin feel after washing?</label>
+                    <select class="form-select mb-2" id="skin_q1">
+                        <option value="dry">Tight & Dry</option>
+                        <option value="oily">Greasy</option>
+                        <option value="normal">Soft & Normal</option>
+                    </select>
+
+                    <label class="form-label">2. How often do you get acne?</label>
+                    <select class="form-select mb-2" id="skin_q2">
+                        <option value="oily">Frequently</option>
+                        <option value="normal">Occasionally</option>
+                        <option value="dry">Rarely</option>
+                    </select>
+
+                    <label class="form-label">3. Does your skin become oily during the day?</label>
+                    <select class="form-select mb-3" id="skin_q3">
+                        <option value="oily">Yes, very oily</option>
+                        <option value="normal">Slightly oily</option>
+                        <option value="dry">No, it stays dry</option>
+                    </select>
+
+                    <button type="button" class="btn btn-primary w-100" onclick="getSkinSuggestion()">Get Skin Suggestion</button>
+                </form>
+                <p id="skinSuggestion" class="mt-3 suggestion"></p>
+            </div>
+        </div>
+
+        <div class="card mx-auto mb-4">
+            <div class="card-body">
+                <h4 class="card-title text-center">Find Your Hair Type</h4>
+                <form id="hairQuizForm">
+                    <label class="form-label">1. How does your scalp feel at the end of the day?</label>
+                    <select class="form-select mb-2" id="hair_q1">
+                        <option value="dry">Dry & Itchy</option>
+                        <option value="oily">Oily & Greasy</option>
+                        <option value="normal">Balanced</option>
+                    </select>
+
+                    <label class="form-label">2. How often do you need to wash your hair?</label>
+                    <select class="form-select mb-2" id="hair_q2">
+                        <option value="oily">Every day</option>
+                        <option value="normal">Every 2-3 days</option>
+                        <option value="dry">Once a week</option>
+                    </select>
+
+                    <label class="form-label">3. Do you experience frizz or dandruff?</label>
+                    <select class="form-select mb-3" id="hair_q3">
+                        <option value="dry">Yes, frizzy and dry</option>
+                        <option value="oily">No, but my scalp is greasy</option>
+                        <option value="normal">No major issues</option>
+                    </select>
+
+                    <button type="button" class="btn btn-primary w-100" onclick="getHairSuggestion()">Get Hair Suggestion</button>
+                </form>
+                <p id="hairSuggestion" class="mt-3 suggestion"></p>
+            </div>
+        </div>
+
+        <div class="card mx-auto fitness-bg">
+            <div class="card-body">
+                <h4 class="card-title text-center">Find Your Fitness Plan</h4>
+                <form id="fitnessQuizForm">
+                    <label class="form-label">1. How often do you work out?</label>
+                    <select class="form-select mb-2" id="fitness_q1">
+                        <option value="beginner">Rarely</option>
+                        <option value="intermediate">3-4 times a week</option>
+                        <option value="advanced">Daily</option>
+                    </select>
+
+                    <label class="form-label">2. What is your fitness goal?</label>
+                    <select class="form-select mb-2" id="fitness_q2">
+                        <option value="weight_loss">Lose weight</option>
+                        <option value="muscle_gain">Build muscle</option>
+                        <option value="endurance">Increase endurance</option>
+                    </select>
+
+                    <label class="form-label">3. How intense do you like your workouts?</label>
+                    <select class="form-select mb-3" id="fitness_q3">
+                        <option value="beginner">Light workouts</option>
+                        <option value="intermediate">Moderate intensity</option>
+                        <option value="advanced">High intensity</option>
+                    </select>
+
+                    <button type="button" class="btn btn-light w-100" onclick="getFitnessSuggestion()">Get Fitness Plan</button>
+                </form>
+                <p id="fitnessSuggestion" class="mt-3 suggestion"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getSkinSuggestion() {
+            let answers = [document.getElementById("skin_q1").value, document.getElementById("skin_q2").value, document.getElementById("skin_q3").value];
+            let suggestion = answers.includes("oily") ? "Oily Skin - Use oil-free products." : answers.includes("dry") ? "Dry Skin - Hydrate & moisturize!" : "Normal Skin - Maintain a balanced routine.";
+            document.getElementById("skinSuggestion").innerText = suggestion;
+        }
+
+        function getHairSuggestion() {
+            let answers = [document.getElementById("hair_q1").value, document.getElementById("hair_q2").value, document.getElementById("hair_q3").value];
+            let suggestion = answers.includes("oily") ? "Oily Hair - Wash frequently with mild shampoo." : answers.includes("dry") ? "Dry Hair - Deep condition weekly!" : "Normal Hair - Keep up a healthy routine!";
+            document.getElementById("hairSuggestion").innerText = suggestion;
+        }
+
+        function getFitnessSuggestion() {
+            let answers = [document.getElementById("fitness_q1").value, document.getElementById("fitness_q2").value, document.getElementById("fitness_q3").value];
+            let suggestion = answers.includes("beginner") ? "Start light & increase gradually." : answers.includes("advanced") ? "High-intensity training is best for you!" : "Balanced workout is ideal.";
+            document.getElementById("fitnessSuggestion").innerText = suggestion;
+        }
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <div>
+         <footer class="footer">
+             <div class="container">
+                 <div class="row">
+
+                     <div class="col-lg-4 col-md-6 footer-about">
+                         <img src="image/icon.jpeg" alt="Logo" class="footer-logo">
+                         <p>Your beauty companion, helping you shine every day!</p>
+                     </div>
+         
+
+                     <div class="col-lg-4 col-md-6 footer-links">
+                         <h4>Quick Links</h4>
+                         <ul>
+                             <li><a href="home.html">Home</a></li>
+                             <li><a href="skincare.html">Skin Care</a></li>
+                             <li><a href="haircare.html">Hair Care</a></li>
+                             <li><a href="products.html">Products</a></li>
+                             <li><a href="contact.html">Contact</a></li>
+                         </ul>
+                     </div>
+
+
+                     <div class="col-lg-4 col-md-12 footer-social">
+                         <h4>Follow Us</h4>
+                         <a href="#"><i class="fab fa-facebook"></i></a>
+                         <a href="#"><i class="fab fa-instagram"></i></a>
+                         <a href="#"><i class="fab fa-twitter"></i></a>
+                         <a href="#"><i class="fab fa-youtube"></i></a>
+                     </div>
+                 </div>
+             </div>
+
+             <div class="footer-bottom">
+                 <p>&copy; 2025 Bloom and Bliss. All rights reserved.</p>
+             </div>
+         </footer>
+
+
+         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+     </div>
+
+</body>
+</html>
